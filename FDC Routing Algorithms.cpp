@@ -1,5 +1,9 @@
-// FDC Routing Algorithms.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+	Written By: Joel Smith
+	
+	Purpose: Contains the main function and controls which simulations run 
+		as well as displaying the run results
+*/
 
 #include <iostream>
 #include <thread>
