@@ -1,3 +1,10 @@
+/*
+	Written By: Joel Smith
+	
+	Purpose: Controll structure that changes the static Dijkstra algorithm to a Semi-static/ adaptive 
+		algorithm that adjust when the conditions are met (in this case when a queue overflows within the network)
+*/
+
 #include <iostream>
 #include <limits.h>
 #include <list>
