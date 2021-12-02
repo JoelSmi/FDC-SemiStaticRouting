@@ -38,14 +38,23 @@ int main()
 	//Static sim object creation with message size of 1000 and source 0, destion 6
 	simulation sim = simulation(initialGraph, NodeQueues, transmissionRate, 1000, 0, 6, true);
 	
+	cout << "Static simulation started..." << endl;
+	
 	//strat time to determine run time of current simulation
 	int startTime = clock();
 	sim.run();
 	int staticTime = clock() - startTime;
 	staticPacketLoss = sim.DroppedPacket;
 
+	cout << "Static simulation complete." << endl;
+	
+	cout << "====================================================" << endl << endl;
+	cout << "====================================================" << endl << endl;
+	
 	//Semi-static sim object creation with message size of 1000 and source 0, destion 6
 	sim = simulation(initialGraph, NodeQueues, transmissionRate, 1000, 0, 6, false);
+	
+	cout << "Semi-static simulation started..." << endl;
 	startTime = clock();
 	sim.run();
 	
@@ -61,8 +70,14 @@ int main()
 	}*/
 
 	int SemiStaticTime = clock() - startTime;
+	
+	cout << "Semi-static simulation complete." << endl;
+
 	SemiStaticPacketLoss = sim.DroppedPacket;
 
+	cout << "====================================================" << endl << endl;
+	cout << "\n\t\t\t\Run Results:" << endl;
+	cout << "\t\t\t\------------" << endl;
 	//displaying the packet loss and run times for both the static and semi static runs
 	cout << " Static Packet Loss: " << staticPacketLoss << "\tSemi-Static Packet Loss: " << SemiStaticPacketLoss << endl;
 	cout << " Static Completion Time: " << staticTime << "\tSemi-Static Completion Time: " << SemiStaticTime << endl;
